@@ -1,0 +1,34 @@
+.cart{
+    margin-top: 100px;
+}
+.cart-item{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.cart-item-title{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    
+    align-items: center;
+    font-size: max(1vw, 12px);
+}
+.cart-item-item{
+    margin: 10px 0px;
+    color: black;
+    font-weight: 500;
+}
+.cart-item-item img{
+    width: 50px;
+}
+/* .cart hr{
+    border: none;
+    height: 1px;
+} */
+
+.cross{
+    cursor: pointer;
+
+}
+.cart-item-title p {
+    margin-bottom: 0 !important;
+}

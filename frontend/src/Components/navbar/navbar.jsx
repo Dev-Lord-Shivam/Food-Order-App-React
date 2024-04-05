@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { assets } from '../../assets/assets';
 import './navbar.css';
+import {Link} from 'react-router-dom';
 
-
-const MyNavbar = () => {
-  const [menu,setMenu] = useState("Menu")
+const MyNavbar = ({setShowLogin}) => {
+  const [menu,setMenu] = useState("home")
   return (
     <div className='container-fluid'>
        <div className='row align-items-center p-4'>
            <div className='col-md-4'>
-           <img src={assets.logo} alt="Logo" style={{ width: '150px' }} />
+           <Link to='/'><img src={assets.logo} alt="Logo" style={{ width: '150px' }} /></Link>
            </div>
            <div className='col-md-4'>
               <ul className='NavList'>
-                <li onClick={()=>setMenu("home")} className={menu == "home"?"active":""}>Home</li>
-                <li onClick={()=>setMenu("Menu")} className={menu == "Menu"?"active":""}>Menu</li>
-                <li onClick={()=>setMenu("Mobile-App")} className={menu == "Mobile-App"?"active":""}>Mobile-App</li>
-                <li onClick={()=>setMenu("ContactUs")} className={menu == "ContactUs"?"active":""}>Contact Us</li>
+                <Link to='/' onClick={()=>setMenu("home")} className={menu == "home"?"active":""}>Home</Link>
+                <a href='#explore-menu' onClick={()=>setMenu("Menu")} className={menu == "Menu"?"active":""}>Menu</a>
+                <a href='#app-download' onClick={()=>setMenu("Mobile-App")} className={menu == "Mobile-App"?"active":""}>Mobile-App</a>
+                <a href='#footer' onClick={()=>setMenu("ContactUs")} className={menu == "ContactUs"?"active":""}>Contact Us</a>
               </ul>
            </div>
            <div className='col-md-4'>
@@ -25,11 +25,11 @@ const MyNavbar = () => {
                 <img src={assets.search_icon} />
               </div>
               <div className='col-md-6 basketimg'>
-                <img src={assets.basket_icon}/>
+                <Link to='/cart'><img onClick={()=>setMenu("")} className={menu == "ContactUs"?"active":""} src={assets.basket_icon}/></Link>
                 <div className='dot'></div>
               </div>
               <div className='col-md-4'>
-                <button className='SignInBtn'>Sign In</button>
+                <button onClick={() => setShowLogin(true)} className='SignInBtn'>Sign In</button>
               </div>
               </div>
            </div>
