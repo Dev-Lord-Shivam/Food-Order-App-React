@@ -1,0 +1,32 @@
+.carousel-image {
+    height: 450px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio; covers entire area */
+    
+}
+
+.header-content{
+    position: absolute;
+    bottom: 10%;
+    left: 11vw;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    color: white;
+    animation: fadeIn 3s;
+}
+.header-content h2{
+    font-weight: 500;
+    font-size: max(4.5vw,22px);
+}
+.header-content p{
+    font-weight: 1vw;
+}
+.header-content button{
+    border: none;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    border-radius: 50px;
+    font-weight: 500;
+}
