@@ -5,6 +5,13 @@ import {Link} from 'react-router-dom';
 
 const MyNavbar = ({setShowLogin}) => {
   const [menu,setMenu] = useState("home")
+
+   const singupBtnClick = () => {
+    console.log('working') 
+       setShowLogin(true);
+       document.body.classList.remove('enable-scroll')
+       document.body.classList.add('disable-scroll')
+   }
   return (
     <div className='container-fluid'>
        <div className='row align-items-center p-4'>
@@ -29,7 +36,7 @@ const MyNavbar = ({setShowLogin}) => {
                 <div className='dot'></div>
               </div>
               <div className='col-md-4'>
-                <button onClick={() => setShowLogin(true)} className='SignInBtn'>Sign In</button>
+                <button onClick={() => singupBtnClick()} className='SignInBtn'>Sign In</button>
               </div>
               </div>
            </div>

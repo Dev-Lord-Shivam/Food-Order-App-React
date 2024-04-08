@@ -4,14 +4,18 @@ import { assets } from '../../assets/assets';
 const LoginForm = ({setShowLogin}) => {
   
     const [currState,setCurrState] = useState("Login");
-
+    const enableScrollOnClose = () => {
+        setShowLogin(false)
+        document.body.classList.remove('disable-scroll')
+        document.body.classList.add('enable-scroll')
+    }
   return (
    
     <div className='login-popup'>
        <form className="login-popup-container">
          <div className="login-popup-titile d-flex justify-content-between align-items-center text-black">
             <h2>{currState}</h2>
-            <img onClick={()=>setShowLogin(false)} src={assets.cross_icon} alt="" />
+            <img onClick={()=>enableScrollOnClose()} src={assets.cross_icon} alt="" />
          </div>
          <div className="login-popup-input d-flex flex-column gap-3">
             {currState === "Login"?<></>:<input type='text' className='form-control' placeholder='your name' required />}
